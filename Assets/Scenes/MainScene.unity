@@ -328,7 +328,7 @@ MonoBehaviour:
   - {fileID: 1335788321}
   - {fileID: 881028291}
   - {fileID: 272113367}
-  _enemiesCount: 2
+  _enemiesCount: 5
 --- !u!4 &925169471
 Transform:
   m_ObjectHideFlags: 0
@@ -459,7 +459,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2510269215850919830, guid: 3c2f8744c70ff834da0136154ccd53da, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2510269215850919830, guid: 3c2f8744c70ff834da0136154ccd53da, type: 3}
       propertyPath: m_LocalPosition.z
