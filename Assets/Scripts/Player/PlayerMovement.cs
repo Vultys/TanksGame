@@ -23,6 +23,11 @@ public class PlayerMovement : MonoBehaviour
         _inputReader.MoveEvent -= HandleMove;    
     }
 
+    private void OnCollisionEnter2D(Collision2D other) 
+    {
+        Destroy(gameObject);    
+    }
+
     private void Update() 
     {
         Rotate();  
