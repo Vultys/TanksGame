@@ -21,8 +21,14 @@ public class EnemyController : MonoBehaviour
         CreateEnemyPool(); 
         for (int i = 0; i < _enemiesCount; i++)
         {
-            _enemyPool.Get();
+            Enemy enemy = _enemyPool.Get();
+            enemy.Init(this);
         }
+    }
+
+    public void ReleaseEnemyFromPool(Enemy enemy)
+    {
+        _enemyPool.Release(enemy);
     }
 
     private void CreateEnemyPool()

@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 908080958514756597, guid: 848a529408ba9b647a03177e989a2412, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 1267323795367004291, guid: 848a529408ba9b647a03177e989a2412, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -48,8 +52,28 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1961553760510319335, guid: 848a529408ba9b647a03177e989a2412, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4645884594208976794, guid: 848a529408ba9b647a03177e989a2412, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7068957119894301537, guid: 848a529408ba9b647a03177e989a2412, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 7386686861635594850, guid: 848a529408ba9b647a03177e989a2412, type: 3}
       propertyPath: m_Name
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7386686861635594850, guid: 848a529408ba9b647a03177e989a2412, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7548308279463791863, guid: 848a529408ba9b647a03177e989a2412, type: 3}
+      propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8543916328417138002, guid: 848a529408ba9b647a03177e989a2412, type: 3}
