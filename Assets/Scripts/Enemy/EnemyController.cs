@@ -18,6 +18,13 @@ public class EnemyController : MonoBehaviour
 
     private int _tanksCount;
 
+    private SortedSet<int> _usedSpawns;
+
+    private void Awake() 
+    {
+        _usedSpawns = new SortedSet<int>();    
+    }
+
     private void Start() 
     {
         CreateEnemyPool(); 
@@ -30,6 +37,7 @@ public class EnemyController : MonoBehaviour
         _tanksCount--;
         if(_tanksCount <= 0)
         {
+            _usedSpawns.Clear();
             SpawnTanks(_enemiesCount);
         }
     }
@@ -63,6 +71,15 @@ public class EnemyController : MonoBehaviour
 
     private Transform GetSpawnPoint()
     {
-        return _enemySpawnPoints[Random.Range(0, _enemySpawnPoints.Count)];
+        int spawnIndex;
+        do
+        {
+            spawnIndex = Random.Range(0, _enemySpawnPoints.Count);
+        } 
+        while(_usedSpawns.Contains(spawnIndex));
+
+        _usedSpawns.Add(spawnIndex);
+
+        return _enemySpawnPoints[spawnIndex];
     }
 }

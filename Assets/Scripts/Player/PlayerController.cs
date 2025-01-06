@@ -20,9 +20,7 @@ public class PlayerController : MonoBehaviour
 
     private void DestroyPlayer()
     {
-        _hideOnCollision.OnHide -= DestroyPlayer;
-
-        Destroy(_activePlayer);
+        _hideOnCollision.OnDestroy -= DestroyPlayer;
 
         Invoke("SpawnPlayer", _respawnTime);
     }
@@ -33,6 +31,6 @@ public class PlayerController : MonoBehaviour
 
         _hideOnCollision = _activePlayer.GetComponent<DestroySelfOnCollisionWithEnemy>();
         
-        _hideOnCollision.OnHide += DestroyPlayer;
+        _hideOnCollision.OnDestroy += DestroyPlayer;
     }
 }

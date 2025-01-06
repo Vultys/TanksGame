@@ -142,10 +142,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _minDirectionChangeCooldown: 1
   _maxDirectionChangeCooldown: 4
-  _minDirectionChangeAngle: -180
-  _maxDirectionChangeAngle: 180
+  _minDirectionChangeAngle: -270
+  _maxDirectionChangeAngle: 270
   _speed: 3
-  _rotationSpeed: 90
+  _rotationSpeed: 180
   _rigidbody: {fileID: 6151748093476898775}
 --- !u!50 &6151748093476898775 stripped
 Rigidbody2D:
