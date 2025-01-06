@@ -22,7 +22,6 @@ public class EnemyController : MonoBehaviour
     {
         CreateEnemyPool(); 
         SpawnTanks(_enemiesCount);
-        _tanksCount = _enemiesCount;
     }
 
     public void ReleaseEnemyFromPool(Enemy enemy)
@@ -42,6 +41,7 @@ public class EnemyController : MonoBehaviour
             Enemy enemy = _enemyPool.Get();
             enemy.Init(this);
         }
+        _tanksCount = _enemiesCount;
     }
 
     private void CreateEnemyPool()
