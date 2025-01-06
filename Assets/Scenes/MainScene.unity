@@ -328,7 +328,7 @@ MonoBehaviour:
   - {fileID: 1335788321}
   - {fileID: 881028291}
   - {fileID: 272113367}
-  _enemiesCount: 5
+  _enemiesCount: 2
 --- !u!4 &925169471
 Transform:
   m_ObjectHideFlags: 0

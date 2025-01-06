@@ -79,7 +79,18 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7386686861635594850, guid: 848a529408ba9b647a03177e989a2412, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8330754199654343475}
+    - targetCorrespondingSourceObject: {fileID: 7386686861635594850, guid: 848a529408ba9b647a03177e989a2412, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5270419889552082135}
+    - targetCorrespondingSourceObject: {fileID: 7386686861635594850, guid: 848a529408ba9b647a03177e989a2412, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2214948269805237268}
   m_SourcePrefab: {fileID: 100100000, guid: 848a529408ba9b647a03177e989a2412, type: 3}
+--- !u!4 &453979947208740241 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7593332437343775024, guid: 848a529408ba9b647a03177e989a2412, type: 3}
+  m_PrefabInstance: {fileID: 8010834760766366881}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &697771338990948035 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7386686861635594850, guid: 848a529408ba9b647a03177e989a2412, type: 3}
@@ -102,6 +113,50 @@ MonoBehaviour:
   _rigidbody: {fileID: 7705996841352729816}
   _movementSpeed: 5
   _turningRate: 180
+--- !u!114 &5270419889552082135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697771338990948035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 914e455228dab78469ab77a7532f2001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _turretTransform: {fileID: 453979947208740241}
+  _inputReader: {fileID: 11400000, guid: 28548338dd0b08c48b2c34041432edc9, type: 2}
+--- !u!114 &2214948269805237268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697771338990948035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1116644404a9d204787cafaa12d444e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputReader: {fileID: 11400000, guid: 28548338dd0b08c48b2c34041432edc9, type: 2}
+  _projectileSpawnPoint: {fileID: 5248366522464679946}
+  _projectilePrefab: {fileID: 7698139174551530456, guid: cab33bd1cbf9db14f9d4f8e888a0ca0f, type: 3}
+  _playerCollider: {fileID: 3615974465727453946}
+  _projectileSpeed: 30
+  _fireRate: 0.75
+  _startProjectilesPoolSize: 1
+  _maxProjectilesPoolSize: 15
+--- !u!61 &3615974465727453946 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 6702119700782251611, guid: 848a529408ba9b647a03177e989a2412, type: 3}
+  m_PrefabInstance: {fileID: 8010834760766366881}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5248366522464679946 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2880547076999716011, guid: 848a529408ba9b647a03177e989a2412, type: 3}
+  m_PrefabInstance: {fileID: 8010834760766366881}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7687602758550845659 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 397418752207543418, guid: 848a529408ba9b647a03177e989a2412, type: 3}
