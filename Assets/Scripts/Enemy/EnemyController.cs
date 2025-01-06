@@ -8,7 +8,7 @@ public class EnemyController : MonoBehaviour
 
     [SerializeField] private List<Transform> _enemySpawnPoints;
 
-    [SerializeField] private float _enemiesCount = 5;
+    [SerializeField] private int _enemiesCount = 5;
 
     private ObjectPool<Enemy> _enemyPool;
 
@@ -16,19 +16,32 @@ public class EnemyController : MonoBehaviour
 
     private int _maxEnemyPoolSize = 10;
 
+    private int _tanksCount;
+
     private void Start() 
     {
         CreateEnemyPool(); 
-        for (int i = 0; i < _enemiesCount; i++)
-        {
-            Enemy enemy = _enemyPool.Get();
-            enemy.Init(this);
-        }
+        SpawnTanks(_enemiesCount);
+        _tanksCount = _enemiesCount;
     }
 
     public void ReleaseEnemyFromPool(Enemy enemy)
     {
         _enemyPool.Release(enemy);
+        _tanksCount--;
+        if(_tanksCount <= 0)
+        {
+            SpawnTanks(_enemiesCount);
+        }
+    }
+
+    private void SpawnTanks(int count)
+    {
+        for (int i = 0; i < count; i++)
+        {
+            Enemy enemy = _enemyPool.Get();
+            enemy.Init(this);
+        }
     }
 
     private void CreateEnemyPool()
