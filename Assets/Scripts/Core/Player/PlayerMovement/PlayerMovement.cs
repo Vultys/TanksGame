@@ -1,10 +1,12 @@
+using System.Collections.Generic;
+using Newtonsoft.Json.Linq;
 using UnityEngine;
 
 /// <summary>
 /// Handles player movement and rotation.
 /// </summary>
 [RequireComponent(typeof(Rigidbody2D))]
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour, IJsonSaveable
 {
     [Header("References")]
     [SerializeField] private InputReader _inputReader;
@@ -51,5 +53,23 @@ public class PlayerMovement : MonoBehaviour
     private void OnMoveInputReceived(Vector2 movementInput)
     {
         _previousMovementInput = movementInput;
+    }
+
+    /// <summary>
+    /// Captures the player's position as a JToken.
+    /// </summary>
+    /// <returns>A JToken representing the player's position.</returns>
+    public JToken CaptureAsJToken()
+    {
+        return transform.position.ToToken();
+    }
+
+    /// <summary>
+    /// Restores the player's position from the provided JToken.
+    /// </summary>
+    /// <param name="state">A JToken representing the player's position.</param>
+    public void RestoreFromJToken(JToken state)
+    {
+        transform.position = state.ToVector3();
     }
 }

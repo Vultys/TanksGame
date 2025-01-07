@@ -1,7 +1,8 @@
+using Newtonsoft.Json.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class EnemyAIController : MonoBehaviour
+public class EnemyAIController : MonoBehaviour, IJsonSaveable
 {
     [Header("Direction Change Settings")]
     [SerializeField, Range(0f, 10f)] private float _minDirectionChangeCooldown = 1f;
@@ -39,4 +40,21 @@ public class EnemyAIController : MonoBehaviour
         _rigidbody.velocity = (Vector2)transform.up * _speed;
     }
 
+    /// <summary>
+    /// Captures the enemy's position as a JToken.
+    /// </summary>
+    /// <returns>A JToken representing the enemy's position.</returns>
+    public JToken CaptureAsJToken()
+    {
+        return transform.position.ToToken();
+    }
+
+    /// <summary>
+    /// Restores the enemy's position from the provided JToken.
+    /// </summary>
+    /// <param name="state">A JToken representing the enemy's position.</param>
+    public void RestoreFromJToken(JToken state)
+    {
+        transform.position = state.ToVector3();
+    }
 }

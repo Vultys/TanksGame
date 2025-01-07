@@ -103,6 +103,7 @@ public class TankController : MonoBehaviour
         {
             Enemy enemy = _enemiesPool.Get();
             enemy.Initialize(this);
+            enemy.GetComponent<JsonSaveableEntity>().GenerateUniqueIdentifier();
         }
 
         _currentEnemyCount = count;
