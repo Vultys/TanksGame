@@ -18,12 +18,12 @@ public class PlayerMovement : MonoBehaviour, IJsonSaveable
 
     private Rigidbody2D _rigidbody;
     private Vector2 _previousMovementInput;
-    private IMovement _movement;
+    private IMovementHandler _movement;
 
     private void Awake() 
     {
         _rigidbody = GetComponent<Rigidbody2D>();    
-        _movement = new PlayerStandardMovement(_rigidbody, _bodyTransform, _movementSpeed, _turningRate);
+        _movement = new PlayerStandardMovementHandler(_rigidbody, _bodyTransform, _movementSpeed, _turningRate);
     }
 
     private void OnEnable() 

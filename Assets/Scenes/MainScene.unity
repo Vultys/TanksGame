@@ -990,7 +990,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerPrefab: {fileID: 697771338990948035, guid: b46ffc8c671c67b46b2eab1da0981468, type: 3}
-  _enemyPrefab: {fileID: 7435614126115658866, guid: a12c8e57d031bbd49ab578b377f83d06, type: 3}
+  _enemyPrefab: {fileID: 3175294332984101583, guid: a12c8e57d031bbd49ab578b377f83d06, type: 3}
   _spawnPoints:
   - {fileID: 6735191548524296871}
   - {fileID: 6735191548524296870}

@@ -1,11 +1,8 @@
-using System;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
     private ProjectileLauncher _gun;
-
-    public event Action<Enemy> OnCollidedWithEnemy;
 
     public void Init(ProjectileLauncher gun)
     {
@@ -19,10 +16,7 @@ public class Projectile : MonoBehaviour
         if(other.CompareTag("Enemy"))
         {
             Enemy collidedEnemy = other.GetComponentInParent<Enemy>();
-            if(collidedEnemy != null)
-            {
-                collidedEnemy.ReleaseFromPool();
-            }
+            collidedEnemy?.HandleProjectileCollision();
         }
     }
 }

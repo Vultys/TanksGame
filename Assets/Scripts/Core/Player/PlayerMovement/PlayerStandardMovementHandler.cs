@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerStandardMovement : IMovement
+public class PlayerStandardMovementHandler : IMovementHandler
 {
     private readonly Rigidbody2D _rigidbody;
     private readonly Transform _bodyTransform;
@@ -15,7 +15,7 @@ public class PlayerStandardMovement : IMovement
     /// <param name="bodyTransform">Body transform of the player.</param>
     /// <param name="movementSpeed">Speed at which the player moves.</param>
     /// <param name="turningRate">Rate at which the player rotates.</param>
-    public PlayerStandardMovement(Rigidbody2D rigidbody, Transform bodyTransform, float movementSpeed, float turningRate)
+    public PlayerStandardMovementHandler(Rigidbody2D rigidbody, Transform bodyTransform, float movementSpeed, float turningRate)
     {
         _rigidbody = rigidbody;
         _bodyTransform = bodyTransform;

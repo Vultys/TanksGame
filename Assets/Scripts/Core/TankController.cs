@@ -20,7 +20,7 @@ public class TankController : MonoBehaviour
 
     private GameObject _activePlayer;
     private ObjectPool<Enemy> _enemiesPool;
-    private DestroySelfOnCollisionWithEnemy _playerDestroy;
+    private PlayerCollisionHandler _playerDestroy;
     private int _currentEnemyCount;
     private SortedSet<int> _usedSpawns;
 
@@ -58,8 +58,8 @@ public class TankController : MonoBehaviour
     private void SpawnPlayer()
     {
         _activePlayer = Instantiate(_playerPrefab, GetUnusedSpawnPoint().position, Quaternion.identity);
-        _playerDestroy = _activePlayer.GetComponent<DestroySelfOnCollisionWithEnemy>();
-        _playerDestroy.OnDestroy += HandlePlayerDestruction;
+        _playerDestroy = _activePlayer.GetComponent<PlayerCollisionHandler>();
+        _playerDestroy.OnCollisionWithEnemy += HandlePlayerDestruction;
     }
 
     /// <summary>
@@ -67,7 +67,7 @@ public class TankController : MonoBehaviour
     /// </summary>
     private void HandlePlayerDestruction()
     {
-        _playerDestroy.OnDestroy -= HandlePlayerDestruction;
+        _playerDestroy.OnCollisionWithEnemy -= HandlePlayerDestruction;
         ResetTanksSpawns();
         Invoke(nameof(SpawnPlayer), _playerRespawnTime);
     }

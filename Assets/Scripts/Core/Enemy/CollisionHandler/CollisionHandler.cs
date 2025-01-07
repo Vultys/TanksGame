@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -52,7 +53,17 @@ public class CollisionHandler : ICollisionHandler
     /// </summary>
     private float RandomRotation()
     {
-        float angleChange = Random.Range(-90f, 90f);
+        float angleChange = UnityEngine.Random.Range(_minAngle, _maxAngle);
+
+        if(angleChange < 0f)
+        {
+            angleChange = Mathf.Min(angleChange, -90f);
+        }
+        else
+        {
+            angleChange = Mathf.Max(angleChange, 90f);
+        }
+
         Quaternion rotation = Quaternion.AngleAxis(angleChange, Vector3.forward);
         Quaternion targetRotation = Quaternion.LookRotation(Vector3.forward, rotation * _rigidbody.transform.up);
         Quaternion newRotation = Quaternion.RotateTowards(_rigidbody.transform.rotation, targetRotation, _rotationSpeed * Time.deltaTime);

@@ -3,7 +3,7 @@ using UnityEngine;
 /// <summary>
 /// Interface for player movement.
 /// </summary>
-public interface IMovement
+public interface IMovementHandler
 {
     void Move(Vector2 input);
 

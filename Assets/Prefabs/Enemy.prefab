@@ -106,9 +106,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7386686861635594850, guid: 848a529408ba9b647a03177e989a2412, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7435614126115658866}
-    - targetCorrespondingSourceObject: {fileID: 7386686861635594850, guid: 848a529408ba9b647a03177e989a2412, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 3175294332984101583}
     - targetCorrespondingSourceObject: {fileID: 7386686861635594850, guid: 848a529408ba9b647a03177e989a2412, type: 3}
       insertIndex: -1
@@ -119,18 +116,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7386686861635594850, guid: 848a529408ba9b647a03177e989a2412, type: 3}
   m_PrefabInstance: {fileID: 5801312267100796846}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7435614126115658866
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3891301759644933580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8b22a872a2a2824b910208adbbcdc46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3175294332984101583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,11 +129,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _minDirectionChangeCooldown: 1
-  _maxDirectionChangeCooldown: 4
-  _minDirectionChangeAngle: -270
-  _maxDirectionChangeAngle: 270
+  _maxDirectionChangeCooldown: 2.96
+  _minDirectionChangeAngle: -182
+  _maxDirectionChangeAngle: 185
   _speed: 3
-  _rotationSpeed: 180
+  _rotationSpeed: 178
 --- !u!114 &-2152650414776178107
 MonoBehaviour:
   m_ObjectHideFlags: 0

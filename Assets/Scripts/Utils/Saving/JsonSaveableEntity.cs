@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using Newtonsoft.Json.Linq;
-using UnityEditor;
 using UnityEngine;
 
 [ExecuteAlways]
@@ -24,13 +23,7 @@ public class JsonSaveableEntity : MonoBehaviour
     /// </summary>
     public void GenerateUniqueIdentifier()
     {
-        SerializedObject serializedObject = new SerializedObject(this);
-        SerializedProperty property = serializedObject.FindProperty("uniqueIdentifier");
-         if (string.IsNullOrEmpty(property.stringValue) || !IsUnique(property.stringValue))
-        {
-            property.stringValue = System.Guid.NewGuid().ToString();
-            serializedObject.ApplyModifiedProperties();
-        }
+        uniqueIdentifier = System.Guid.NewGuid().ToString();
     }
 
     /// <summary>
