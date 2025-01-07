@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    private EnemyController _enemyController;
+    private TankController _enemyController;
 
-    public void Init(EnemyController controller)
+    public void Initialize(TankController controller)
     {
         _enemyController = controller;
     }
     
     public void ReleaseFromPool()
     {
-        _enemyController.ReleaseEnemyFromPool(this);
+        _enemyController.ReleaseEnemy(this);
     }
 }
